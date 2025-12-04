@@ -5,9 +5,10 @@ import { getAuthHeader, clearAuthData } from "./auth-utils";
 
 // Use Next.js API proxy to avoid CORS issues
 // const BASE_URL = "/api/proxy";
-const BASE_URL = "http://matjarna.runasp.net/api";
+// const BASE_URL = "http://matjarna.runasp.net/api";
 // Direct backend URL (causes CORS): "https://referenced-aged-futures-activation.trycloudflare.com/api"
 // Alternative: "http://matjarna.runasp.net/api"
+const BASE_URL = "/api/backend";
 
 // ============================================================================
 // TYPE DEFINITIONS
