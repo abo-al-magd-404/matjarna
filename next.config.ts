@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/api/backend/:path*',
+        
+        destination: 'http://matjarna.runasp.net/api/:path*', 
+      },
+    ];
+  },
 };
 
 export default nextConfig;
