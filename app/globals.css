@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* ===== Root Variables ===== */
+:root {
+  /* Core */
+  --background: #0a0a0f;
+  --background-secondary: #0a0a0f;
+  --background-card: #111118;
+  --background-hover: #16161f;
+
+  /* Foreground */
+  --foreground: #f0f0f8;
+  --foreground-secondary: #8b8b9e;
+  --foreground-muted: #55556a;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.13);
+
+  /* Accent — purple */
+  --accent: #6c63ff;
+  --accent-dark: #4f46e5;
+  --accent-soft: rgba(108, 99, 255, 0.12);
+  --accent-border: rgba(108, 99, 255, 0.3);
+  --accent-glow: rgba(108, 99, 255, 0.28);
+
+  /* Success — teal */
+  --success: #00d9a6;
+  --success-soft: rgba(0, 217, 166, 0.1);
+  --success-border: rgba(0, 217, 166, 0.28);
+
+  /* Danger — coral */
+  --danger: #ff6b6b;
+  --danger-soft: rgba(255, 107, 107, 0.1);
+  --danger-border: rgba(255, 107, 107, 0.28);
+
+  /* Typography */
+  --font-sans: var(--font-cairo);
+  --font-mono: var(--font-cairo);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 6px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-accent: 0 0 32px var(--accent-glow);
+}
+
+/* ===== Global Body ===== */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Smooth Scrolling ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-muted);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ===== Animations ===== */
+
+/* Float */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 16px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+}
+
+/* Shimmer (skeleton loading) */
+@keyframes shimmer {
+  0% {
+    background-position: -600px 0;
+  }
+  100% {
+    background-position: 600px 0;
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Spin slow */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Utility Animation Classes ===== */
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+.animate-shimmer {
+  animation: shimmer 1.6s linear infinite;
+}
+.animate-slide-left {
+  animation: slideInLeft 0.5s ease both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.4s ease both;
+}
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Staggered delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* ===== Skeleton Loader ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--background-card) 25%,
+    var(--background-hover) 50%,
+    var(--background-card) 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: var(--radius-md);
+}
