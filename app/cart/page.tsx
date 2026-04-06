@@ -10,7 +10,6 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      // Changed to flex items-center justify-center to center the "Empty" state
       <div className="min-h-screen bg-[#0A0A0F] flex flex-col items-center justify-center px-4">
         <div className="relative mb-8">
           <div className="absolute inset-0 bg-[#6C63FF] blur-[50px] opacity-20 rounded-full" />
@@ -34,7 +33,6 @@ export default function CartPage() {
   }
 
   return (
-    // min-h-screen + flex + items-center + justify-center centers the whole grid
     <main className="min-h-screen bg-[#0A0A0F] text-white flex items-center justify-center py-12 px-4 sm:px-8">
       <div className="max-w-6xl w-full mx-auto">
         {/* Header */}
