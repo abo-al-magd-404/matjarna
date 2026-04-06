@@ -40,13 +40,11 @@ export default function CheckoutPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate payment processing
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
       clearCart();
 
-      // Redirect to home after 3 seconds
       setTimeout(() => {
         router.push("/");
       }, 3000);
